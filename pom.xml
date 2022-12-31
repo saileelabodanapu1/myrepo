@@ -64,4 +64,11 @@
       </plugins>
     </pluginManagement>
   </build>
+  <distributionManagement>
+    <snapshotRepository>
+      <id>deploymnt</id>
+      <url>http://18.225.5.235:8081/repository/maven-snapshots/</url>
+    </snapshotRepository>
+ </distributionManagement>
+
 </project>
