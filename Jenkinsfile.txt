@@ -1,0 +1,52 @@
+pipeline {
+    
+	agent any
+  
+
+
+    tools {
+        maven  "maven"
+    }
+
+    stages {
+	
+        stage('code clone') {
+            steps {
+               git branch: 'main', url: 'https://github.com/anilkegarla/kartikeyapro.git' 
+            }
+			}
+
+        stage('mvn validate') {
+            steps {
+               sh 'mvn validate' 
+            }
+			}
+		stage('mvn compile') {
+            steps {
+               sh 'mvn compile'
+            }
+			}
+        stage('mvn test') {
+            steps {
+                sh 'mvn test'
+            }
+			}
+	    stage('clean') {
+            steps {
+              sh 'mvn clean'  
+            }
+			}
+        stage('package') {
+		
+            steps {
+              sh 'mvn package'
+		    } 
+			}
+        stage('deploy') {
+		
+            steps {
+              sh 'mvn deploy'
+		    } 
+            }		    		
+    }
+}	 
