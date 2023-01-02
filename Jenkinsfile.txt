@@ -12,7 +12,7 @@ pipeline {
 	
         stage('code clone') {
             steps {
-               git branch: 'main', url: 'https://github.com/anilkegarla/kartikeyapro.git' 
+               git branch: 'main', url: 'https://github.com/anilkegarla/myrepo.git' 
             }
 			}
 
