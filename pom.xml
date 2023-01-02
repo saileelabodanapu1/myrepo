@@ -22,13 +22,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Keita Releases Nexus Repository</name>
-	      <url>http://54.208.53.54:8081/repository/java-release/</url>
+	      <url>http://3.144.11.56:8081/repository/maven-snapshots/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>KeitaTechnologies Snapshot Nexus Repository </name>
-	      <url>http://54.208.53.54:8081/repository/java-sanapshot/</url>
+	      <url>http://3.144.11.56:8081/repository/maven-snapshots/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
