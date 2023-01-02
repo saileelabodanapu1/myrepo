@@ -13,7 +13,13 @@ pipeline {
         stage('maven version') {
             steps {
                 sh 'mvn --version'
-          }  }
+          }  
+		  }
+		  stage('maven package') {
+            steps {
+                sh 'mvn package'
+            }
+        }
    
         stage('maven package') {
             steps {
@@ -26,5 +32,11 @@ pipeline {
                 sh 'mvn test'
             }
         }
+		 stage('maven deploy') {
+            steps {
+                sh 'mvn deploy'
+            }
+			}
+
     }
 }
