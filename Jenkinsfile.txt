@@ -16,21 +16,7 @@ pipeline {
             }
 			}
 
-        stage('mvn validate') {
-            steps {
-               sh 'mvn validate' 
-            }
-			}
-		stage('mvn compile') {
-            steps {
-               sh 'mvn compile'
-            }
-			}
-        stage('mvn test') {
-            steps {
-                sh 'mvn test'
-            }
-			}
+       
 	    stage('clean') {
             steps {
               sh 'mvn clean'  
