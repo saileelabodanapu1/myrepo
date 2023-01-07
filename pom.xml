@@ -15,4 +15,16 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+ <distributionManagement>
+    <repository>
+      <id>deployment</id>
+      <url>http://3.145.172.112:8081/repository/maven-snapshots/</url>
+    </repository>
+    <snapshotRepository>
+      <id>deployment</id>
+      <url>http://3.145.172.112:8081/repository/maven-snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>  
+  
+  
 </project>
