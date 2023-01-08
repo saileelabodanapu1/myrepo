@@ -15,6 +15,14 @@ pipeline {
                 sh 'mvn --version'
           }  
 		  }
+		   stage('sonar scan') {
+            steps {
+                sh 'mvn sonar:sonar \
+  -Dsonar.projectKey=anil \
+  -Dsonar.host.url=http://52.14.126.23:9000 \
+  -Dsonar.login=238ce56bcf80c47e02e79c274f7a066670520d7e'
+          }  
+		  }
 		  stage('maven clean') {
             steps {
                 sh 'mvn clean'
