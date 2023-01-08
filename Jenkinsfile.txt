@@ -15,7 +15,12 @@ pipeline {
                 sh 'mvn --version'
           }  
 		  }
-		   stage('sonar scan') {
+		stage('maven validate') {
+            steps {
+                sh 'mvn validate'
+            }
+        }  
+		stage('sonar scan') {
             steps {
                 sh 'mvn sonar:sonar \
   -Dsonar.projectKey=anil \
@@ -23,23 +28,29 @@ pipeline {
   -Dsonar.login=238ce56bcf80c47e02e79c274f7a066670520d7e'
           }  
 		  }
+		stage('maven compile') {
+            steps {
+                sh 'mvn compile'
+            }
+        }
+		 stage('maven test') {
+            steps {
+                sh 'mvn test'
+            }
+        }
 		  stage('maven clean') {
             steps {
                 sh 'mvn clean'
             }
         }
-   
+        
         stage('maven package') {
             steps {
                 sh 'mvn package'
             }
         }
 		
-        stage('maven test') {
-            steps {
-                sh 'mvn test'
-            }
-        }
+       
 		 stage('maven deploy') {
             steps {
                 sh 'mvn deploy'
