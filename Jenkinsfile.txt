@@ -21,16 +21,7 @@ pipeline {
             }
         }  
 		
-		stage('maven compile') {
-            steps {
-                sh 'mvn compile'
-            }
-        }
-		 stage('maven test') {
-            steps {
-                sh 'mvn test'
-            }
-        }
+		
 		  stage('maven clean') {
             steps {
                 sh 'mvn clean'
