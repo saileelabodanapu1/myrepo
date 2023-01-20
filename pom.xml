@@ -37,8 +37,7 @@
 					<scanIntervalSeconds>0</scanIntervalSeconds>
 				</configuration>
 			</plugin>
-	
-			<plugin>
+	       <plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
 				<version>3.2.2</version>
@@ -54,3 +53,4 @@
 	</distributionManagement>
 		
 </project>
+			
