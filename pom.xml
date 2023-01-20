@@ -37,10 +37,10 @@
 					<scanIntervalSeconds>0</scanIntervalSeconds>
 				</configuration>
 			</plugin>
-	       <plugin>
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
-				<version>3.2.2</version>
+				<version>2.1.1</version>
 			</plugin>
 		</plugins>
 	</build>
@@ -48,9 +48,8 @@
 	  <snapshotRepository>
          <id>deployment</id>
          <name>Your Snapshot Repository</name>
-         <url>http://18.188.73.229:8081/repository/maven-snapshots/</url>
+         <url>http://192.168.29.17:8081/repository/maven-snapshots/</url>
       </snapshotRepository>
 	</distributionManagement>
 		
 </project>
-			
