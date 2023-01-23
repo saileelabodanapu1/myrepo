@@ -1,0 +1,45 @@
+---
+-   name : deployment on tomcat 
+    hosts  : PROD 
+    become : yes
+    vars : 
+      USERNAME : tomcat_user
+      TOMCAT_PATH : /tomcat
+      WAR_URL : http://3.22.74.106:8081/repository/maven-snapshots/com%2Fksapp%2Fks%2F4-SNAPSHOT%2Fmaven-metadata.xml.md5
+      PACK : /tomcat/apache-tomcat-9.0.71/webapps/ks.war
+
+    tasks : 
+      - name: creating tomcat user
+        ansible.builtin.user:
+          name: "{{USERNAME}}"
+      - name: Installing JDK
+        ansible.builtin.yum:
+          name: java
+          state: latest
+      - name: create dir for tomcat
+        ansible.builtin.file:
+          path: "{{TOMCAT_PATH}}"
+          owner: "{{USERNAME}}"
+          group: "{{USERNAME}}"
+          state: directory
+      - name: download tomcat 
+        ansible.builtin.unarchive:
+          src: https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.71/bin/apache-tomcat-9.0.71.tar.gz
+          dest: "{{TOMCAT_PATH}}"   
+          remote_src: yes         
+        become_user : "{{USERNAME}}"  
+      - name : remove old artifacts   
+        file:
+          state: "{{ item }}"
+          path: "/tomcat/apache-tomcat-9.0.71/webapps"
+          owner: "{{USERNAME}}"
+          group: "{{USERNAME}}"   
+        with_items:
+           - absent
+           - directory
+      - name: deploying the war package
+        ansible.builtin.get_url:
+            url: "{{WAR_URL}}"
+            dest: "{{PACK}}"
+                  
+                     
