@@ -5,8 +5,8 @@
     vars : 
       USERNAME : tomcat_user
       TOMCAT_PATH : /tomcat
-      WAR_URL : http://3.22.74.106:8081/repository/maven-snapshots/com%2Fksapp%2Fks%2F4-SNAPSHOT%2Fmaven-metadata.xml.md5
-      PACK : /tomcat/apache-tomcat-9.0.71/webapps/ks.war
+      WAR_URL : http://3.15.29.255:8081/repository/maven-snapshots/com%2Fksapp%2Fks%2F4-SNAPSHOT%2Fks-4-20230123.161940-1.war
+      PACK : /tomcat/apache-tomcat-10.0.27.tar.gz/webapps/ks.war
 
     tasks : 
       - name: creating tomcat user
@@ -24,14 +24,14 @@
           state: directory
       - name: download tomcat 
         ansible.builtin.unarchive:
-          src: https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.71/bin/apache-tomcat-9.0.71.tar.gz
+          src: https://dlcdn.apache.org/tomcat/tomcat-10/v10.0.27/bin/apache-tomcat-10.0.27.tar.gz
           dest: "{{TOMCAT_PATH}}"   
           remote_src: yes         
         become_user : "{{USERNAME}}"  
       - name : remove old artifacts   
         file:
           state: "{{ item }}"
-          path: "/tomcat/apache-tomcat-9.0.71/webapps"
+          path: "/tomcat/apache-tomcat-10.0.27.tar.gz/webapps"
           owner: "{{USERNAME}}"
           group: "{{USERNAME}}"   
         with_items:
