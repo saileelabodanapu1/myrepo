@@ -20,14 +20,6 @@ pipeline {
                 sh 'mvn validate'
             }
         }  
-		stage('sonar scan') {
-            steps {
-                sh 'mvn sonar:sonar \
-  -Dsonar.projectKey=anil \
-  -Dsonar.host.url=http://3.14.142.132:9000 \
-  -Dsonar.login=dda73d6316d5f988b1c163ddc9338d71544eeab1'
-            }
-        }  
 		
 		  stage('maven clean') {
             steps {
