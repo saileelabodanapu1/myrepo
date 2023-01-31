@@ -5,7 +5,7 @@
     vars : 
       USERNAME : tomcat_user
       TOMCAT_PATH : /tomcat
-      WAR_URL : http://3.21.244.237:8081/repository/maven-snapshots/com%2Fksapp%2Fks%2F5-SNAPSHOT%2Fks-5-20230124.054243-1.war
+      WAR_URL : http://18.222.98.91:8081/repository/maven-snapshots/com%2Fksapp%2Fks%2F8-SNAPSHOT%2Fks-8-20230120.073222-1.war
       PACK : /tomcat/apache-tomcat-9.0.71/webapps/ks.war
 
     tasks : 
