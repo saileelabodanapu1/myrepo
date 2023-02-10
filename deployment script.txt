@@ -5,7 +5,7 @@
     vars : 
       USERNAME : tomcat_user
       TOMCAT_PATH : /tomcat
-      WAR_URL : http://3.145.46.66:8081/repository/maven-snapshots/com%2Fksapp%2Fks%2F4-SNAPSHOT%2Fks-4-20230208.094730-2.war
+      WAR_URL : http://18.221.2.103:8081/repository/maven-snapshots/com%2Fksapp%2Fks%2F4-SNAPSHOT%2Fks-4-20230210.092429-1.war
       PACK : /tomcat/apache-tomcat-9.0.71/webapps/ks.war
     tasks : 
       - name: creating tomcat user
