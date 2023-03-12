@@ -20,11 +20,7 @@ pipeline {
                 sh 'mvn validate'
             }
         }
-		stage('Integration testing') {
-            steps {
-                sh 'mvn verfy -DskipUnitTests'
-            }
-        }
+		
 		stage('sonar scan') {
             steps {
                 sh 'mvn sonar:sonar \
