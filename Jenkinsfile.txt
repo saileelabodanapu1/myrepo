@@ -20,7 +20,7 @@ pipeline {
                 sh 'mvn validate'
             }
         }
-		stage('maven Unit testing') {  
+		stage('Unit testing') {  
             steps {
                 sh 'mvn test'
             }
@@ -37,9 +37,9 @@ pipeline {
 		stage('sonar scan') {
             steps {
                 sh 'mvn sonar:sonar \
-  -Dsonar.projectKey=anilnew \
+  -Dsonar.projectKey=anil \
   -Dsonar.host.url=http://18.118.171.115:9000 \
-  -Dsonar.login=235e629f2a620719c70a790fe0203e8ef1b15c6a'
+  -Dsonar.login=f20ecb98ce86af99ca148a3d0f0452d9c164a949'
             }
         }
 		
