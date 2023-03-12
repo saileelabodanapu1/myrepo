@@ -20,6 +20,11 @@ pipeline {
                 sh 'mvn validate'
             }
         }
+		stage('maven Unit testing') {  
+            steps {
+                sh 'mvn test'
+            }
+        }
 		stage('Integration testing'){
             
             steps{
