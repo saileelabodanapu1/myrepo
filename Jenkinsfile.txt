@@ -20,11 +20,16 @@ pipeline {
                 sh 'mvn validate'
             }
         }
+		stage('Integration testing') {
+            steps {
+                sh 'mvn verfy -DskipUnitTests'
+            }
+        }
 		stage('sonar scan') {
             steps {
                 sh 'mvn sonar:sonar \
   -Dsonar.projectKey=anilnew \
-  -Dsonar.host.url=http://18.118.143.92:9000 \
+  -Dsonar.host.url=http://18.118.171.115:9000 \
   -Dsonar.login=235e629f2a620719c70a790fe0203e8ef1b15c6a'
             }
         }
