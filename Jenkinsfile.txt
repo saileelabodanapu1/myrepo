@@ -10,16 +10,7 @@ pipeline {
 			git branch: 'main', credentialsId: 'Git', url: 'https://github.com/anilkegarla/myrepo.git'
 			}
 			}
-        stage('maven version') {
-            steps {
-                sh 'mvn --version'
-          }  
-		  }
-		stage('maven validate') {
-            steps {
-                sh 'mvn validate'
-            }
-        }
+      
 		stage('Unit testing') {  
             steps {
                 sh 'mvn test'
@@ -41,15 +32,7 @@ pipeline {
   -Dsonar.host.url=http://18.118.171.115:9000 \
   -Dsonar.login=f20ecb98ce86af99ca148a3d0f0452d9c164a949'
             }
-        }
-		
-      		
-		
-		  stage('maven clean') {
-            steps {
-                sh 'mvn clean'
-            }
-        }
+         }
         
         stage('maven package') {
             steps {
