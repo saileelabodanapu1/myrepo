@@ -25,14 +25,7 @@ pipeline {
               }
                
         }
-		stage('sonar scan') {
-            steps {
-                sh 'mvn sonar:sonar \
-  -Dsonar.projectKey=anil \
-  -Dsonar.host.url=http://18.218.42.201:9000 \
-  -Dsonar.login=f20ecb98ce86af99ca148a3d0f0452d9c164a949'
-            }
-         }
+		
         
         stage('maven package') {
             steps {
