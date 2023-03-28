@@ -25,6 +25,14 @@ pipeline {
               }
                
         }
+		stage('Sonar scan') {  
+            steps {
+                sh ' mvn sonar:sonar \
+  -Dsonar.projectKey=anilnew \
+  -Dsonar.host.url=http://13.59.81.31:9000 \
+  -Dsonar.login=36a8dfc5ce46842cd19c5dbd9d3dd0b0ad922111 '
+            }
+        }
 		
         
         stage('maven package') {
