@@ -29,7 +29,7 @@ pipeline {
             steps {
                 sh ' mvn sonar:sonar \
   -Dsonar.projectKey=anilnew \
-  -Dsonar.host.url=http://13.59.81.31:9000 \
+  -Dsonar.host.url=http://3.21.171.146:9000 \
   -Dsonar.login=36a8dfc5ce46842cd19c5dbd9d3dd0b0ad922111 '
             }
         }
@@ -44,7 +44,7 @@ pipeline {
        
 		 stage('upload war files to nexus') {
             steps {
-                sh 'mvn deploy'
+                sh ' nexusArtifactUploader artifacts: [[artifactId: 'ks', classifier: '', file: 'target/ks.war', type: 'war']], credentialsId: 'nexus-auth', groupId: 'com.ksapp', nexusUrl: '3.21.171.146:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'demorelease', version: '1''
             }
 			}
         
