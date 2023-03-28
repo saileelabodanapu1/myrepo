@@ -42,7 +42,7 @@ pipeline {
         }
 		
        
-		 stage('maven deploy') {
+		 stage('upload war files to nexus') {
             steps {
                 sh 'mvn deploy'
             }
