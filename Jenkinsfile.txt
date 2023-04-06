@@ -38,13 +38,13 @@ pipeline {
             
             steps{
                 
-           
-                    
+             script{
                     withSonarQubeEnv(credentialsId: 'sonar-api-key-new') {
                         
                         sh 'mvn clean package sonar:sonar'
-                    }
                   
+                    }
+                  }
                     
                 }
             }
