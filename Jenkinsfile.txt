@@ -51,8 +51,8 @@ pipeline {
            steps { 
            script {		   
                 
-				withSonarQubeEnv(credentialsId: 'sonar-api-key-new') 
-    
+				 waitForQualityGate abortPipeline: false, credentialsId: 'sonar-api-key-new'
+               
 
         }}}
     }
