@@ -45,11 +45,15 @@ pipeline {
                         sh 'mvn clean package sonar:sonar'
                   
                   }
-                  }
-                    
-                }
-            }
-       
-        
+                  }}}
+        stage('Quality Gates Status'){ 
+		
+           steps { 
+           script {		   
+                
+				withSonarQubeEnv(credentialsId: 'sonar-api-key-new') 
+    
+
+        }}}
     }
 }
