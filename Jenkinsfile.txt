@@ -37,6 +37,7 @@ pipeline {
 		stage('Static code analysis'){
             
             steps {
+			
 			script{
                 
           
@@ -50,7 +51,7 @@ pipeline {
 		
            steps { 
           
-		      waitForQualityGate abortPipeline: false, credentialsId: 'sonar-api-key-new'
+		      waitForQualityGate abortPipeline: false, credentialsId: 'sonar-api-key'
             
 			   
 
