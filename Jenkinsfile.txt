@@ -50,7 +50,18 @@ pipeline {
                   }
                   }}}
 				  
+		stage('Quality Gates Status'){ 
+		
+           steps { 
+          
+		      waitForQualityGate abortPipeline: false, credentialsId: 'sonar-api-key'
+            
+			   
+
+        }}
+				  
        
+
 		
 		
     }
