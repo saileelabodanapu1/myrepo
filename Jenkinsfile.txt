@@ -61,12 +61,7 @@ pipeline {
         }}
 		
 
-        stage('upload war files to nexus') {
-            steps {
-                sh 'nexusArtifactUploader artifacts: [[artifactId: 'ks', classifier: '', file: 'target/ks.war', type: 'war']], credentialsId: 'nexus-auth', groupId: 'com.ksapp', nexusUrl: '3.21.171.146:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'demorelease', version: '1''
-            }
-        }
-		 
+        
        
 
 		
