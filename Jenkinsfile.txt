@@ -54,7 +54,7 @@ pipeline {
 		
            steps { 
           
-		      waitForQualityGate abortPipeline: false, credentialsId: 'sonar-api-ke'
+		      waitForQualityGate abortPipeline: false, credentialsId: 'sonar-api-key'
             
 			   
 
