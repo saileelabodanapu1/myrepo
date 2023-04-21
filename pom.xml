@@ -28,7 +28,9 @@
     </dependency>
    </dependencies>
 	<build>
-	 <finalName>anil</finalName>
+	 <build>
+       <finalName>anil</finalName>
+     </build>
 		<plugins>
 			<plugin>
 				<groupId>org.mortbay.jetty</groupId>
