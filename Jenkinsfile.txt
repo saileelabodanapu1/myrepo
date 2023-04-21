@@ -64,7 +64,7 @@ pipeline {
 		
             steps {
 			
-                sh 'nexusArtifactUploader artifacts: [[artifactId: 'ks', classifier: '', file: 'target/ks.war', type: 'war']], credentialsId: 'nexus-auth', groupId: 'com.ksapp', nexusUrl: '3.21.171.146:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'demorelease', version: '1''
+              nexusArtifactUploader artifacts: [[artifactId: 'ks', classifier: '', file: 'target/anil.jar', type: 'war']], credentialsId: 'nexus-auth', groupId: 'com.ksapp', nexusUrl: '18.118.22.185:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'demo-release', version: '1.0.0'
             }
         }
 		
