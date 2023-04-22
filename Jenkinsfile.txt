@@ -65,7 +65,7 @@ pipeline {
             steps {
 			    script { 
 				
-				        def pom = readMavenPom file: 'pom.xml'
+				        def readPomVersion = readMavenPom file: 'pom.xml'
 				        def nexusRepo = readMavenPom.version.endsWith ("SNAPSHOT") ?  " " : "demo-release" 
 				   
 
@@ -79,7 +79,7 @@ pipeline {
 			nexusVersion: 'nexus3', 
 			protocol: 'http', 
 			repository: 'demo-release', 
-			version: '1.0.0'
+			version: "${readPomVersion.version}"
 			  
 			  
 			  }
