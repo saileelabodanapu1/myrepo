@@ -67,21 +67,9 @@ pipeline {
 				 def pom = readMavenPom file: 'pom.xml'
 				 def nexusRepo = readMavenPom.version.endsWith ("SNAPSHOT") ?  " " : "demo-release" 
 				 
-              nexusArtifactUploader artifacts:
-			  [
+            
+			nexusArtifactUploader credentialsId: 'nexus-auth', groupId: 'com.ksapp', nexusUrl: '3.138.188.64:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'nexus', version: '1.0.0'
 			  
-      			  [ artifactId: 'ks',
-			        classifier: '', 
-			        file: 'target/anil.war',
-			        type: 'war'
-					
-					]
-					  ],
-			  credentialsId: 'nexus-auth', 
-			  groupId: 'com.ksapp', 
-			  nexusUrl: '3.138.188.64:8081',
-			  nexusVersion: 'nexus3', protocol: 'http', repository: 'demo123', 
-			  version: '1.0.0'
 			  }
             }
         }
