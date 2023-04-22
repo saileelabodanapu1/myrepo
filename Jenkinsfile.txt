@@ -65,7 +65,8 @@ pipeline {
             steps {
 			    script { 
 				
-				   def readPomVersion = readMavenPomfile:Pom
+				        def readPomVersion = readMavenPomfile:Pom
+				        def nexusRepo = readMavenPom.version.endsWith ("SNAPSHOT") ?  " " : "demo-release" 
 				   
 
 				
