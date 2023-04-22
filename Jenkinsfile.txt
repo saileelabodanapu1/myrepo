@@ -68,10 +68,15 @@ pipeline {
 				 def nexusRepo = readMavenPom.version.endsWith ("SNAPSHOT") ?  " " : "demo-release" 
 				 
               nexusArtifactUploader artifacts:
-			  [[artifactId: 'ks',
-			  classifier: '', 
-			  file: 'target/anil.war',
-			  type: 'war']],
+			  [
+			  
+      			  [ artifactId: 'ks',
+			        classifier: '', 
+			        file: 'target/anil.war',
+			        type: 'war'
+					
+					]
+					  ],
 			  credentialsId: 'nexus-auth', 
 			  groupId: 'com.ksapp', 
 			  nexusUrl: '3.138.188.64:8081',
