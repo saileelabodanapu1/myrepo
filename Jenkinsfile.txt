@@ -63,7 +63,11 @@ pipeline {
         stage('Upload War files to nexus') {
 		
             steps {
-			    script {  
+			    script { 
+				
+				   def readPomVersion = readMavenPomfile:Pom
+				   
+
 				
 				 
             
