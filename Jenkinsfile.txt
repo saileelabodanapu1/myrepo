@@ -76,7 +76,7 @@ pipeline {
 			nexusArtifactUploader artifacts: [[artifactId: 'ks', classifier: '', file: 'target/anil.war', type: 'war']], 
 			credentialsId: 'nexus-auth',
 			groupId: 'com.ksapp', 
-			nexusUrl: '3.138.188.64:8081', 
+			nexusUrl: '18.221.70.116:8081', 
 			nexusVersion: 'nexus3', 
 			protocol: 'http', 
 			repository: 'nexusRepo', 
@@ -97,11 +97,7 @@ pipeline {
           }
         }      
        
-      stage ('Push docker image to dockerhub'){
-        steps{''
-		
-		}
-       }
+     
 
 		
 		
