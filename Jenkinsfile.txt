@@ -97,9 +97,7 @@ pipeline {
           }
         }      
        
-       stage ('Push docker image to dockerhub'){
-
-       }
+      
 
 		
 		
