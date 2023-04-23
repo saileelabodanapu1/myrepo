@@ -68,7 +68,7 @@ pipeline {
 				        def readPomVersion = readMavenPom file: 'pom.xml'
 				        
 				        
-				        def nexusRepo = readMavenPom.version.endsWith("SNAPSHOT") ?  "demo-snapshot" : "demo-release" 
+				        def nexusRepo = readPomVersion.version.endsWith("SNAPSHOT") ?  "demo-snapshot" : "demo-release" 
 
 				
 				 
