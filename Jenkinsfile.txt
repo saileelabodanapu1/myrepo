@@ -76,7 +76,7 @@ pipeline {
 			nexusArtifactUploader artifacts: [[artifactId: 'ks', classifier: '', file: 'target/anil.war', type: 'war']], 
 			credentialsId: 'nexus-auth',
 			groupId: 'com.ksapp', 
-			nexusUrl: '18.221.70.116:8081', 
+			nexusUrl: 'http://3.142.96.79:8081', 
 			nexusVersion: 'nexus3', 
 			protocol: 'http', 
 			repository: 'nexusRepo', 
