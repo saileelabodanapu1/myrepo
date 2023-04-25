@@ -84,9 +84,9 @@ pipeline {
 		
        stage('Docker image build'){
         steps{
-            sh 'docker image build -t $JOB_NAME:v1.$BUILD_ID .'
-            sh 'docker image tag $JOB_NAME:v1.BUILD_ID anilkumarkegarla/$JOB_NAME:V1.$BUILD_ID'
-            sh 'docker image tag $JOB_NAME:v1.BUILD_ID anilkumarkegarla/$JOB_NAME:latest'
+            sh 'docker image build -t $JOB_NAME:v1.3.0.$BUILD_ID .'
+            sh 'docker image tag $JOB_NAME:v1.BUILD_ID anilkumarkegarla/$JOB_NAME:V1.3.0.$BUILD_ID'
+            sh 'docker image tag $JOB_NAME:v1.3.0.BUILD_ID anilkumarkegarla/$JOB_NAME:latest'
           }
         }      
        
